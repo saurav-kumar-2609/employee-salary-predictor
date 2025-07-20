@@ -225,7 +225,7 @@ native_country_options = ['United-States', 'Mexico', 'Philippines', 'Germany', '
 
 # --- App Title ---
 st.title("💼 Employee Salary Prediction")
-st.markdown("Predict if an employee's income is **<= $50K** or **> $50K** per year.")
+st.markdown("Predict if an employee's income is **<=$50K** or **>$50K** per year.")
 
 # --- Sidebar Inputs ---
 with st.sidebar:
@@ -281,7 +281,7 @@ if 'prediction_result' in st.session_state:
         if proba is not None:
             st.write(f"Confidence: {proba[1]*100:.2f}%")
     else:
-        st.info("The model predicts the employee's income is **<= $50K** per Year. 📉")
+        st.info("The model predicts the employee's income is **<=$50K** per Year. 📉")
         if proba is not None:
             st.write(f"Confidence: {proba[0]*100:.2f}%")
 
@@ -314,7 +314,7 @@ if uploaded_file:
             'capital-gain', 'capital-loss', 'hours-per-week', 'native-country'
         ]]
 
-        batch_df['Predicted_Income'] = np.where(model_pipeline.predict(full_df) == 1, '>50K', '<=50K')
+        batch_df['Predicted_Income'] = np.where(model_pipeline.predict(full_df) == 1, '>$50K', '<=$50K')
 
         with st.expander("📄 Uploaded CSV Preview"):
             st.dataframe(batch_df.head())
