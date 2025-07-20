@@ -225,7 +225,8 @@ native_country_options = ['United-States', 'Mexico', 'Philippines', 'Germany', '
 
 # --- App Title ---
 st.title("💼 Employee Salary Prediction")
-st.markdown("Predict if an employee's income is **<=$50K** or **>$50K** per year.")
+st.markdown("Predict if an employee's income is **\\<=\\$50K** or **\\>\\$50K** per year.")
+
 
 # --- Sidebar Inputs ---
 with st.sidebar:
